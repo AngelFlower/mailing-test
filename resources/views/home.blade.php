@@ -1,17 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mailing Castrol</title>
+@section('title', 'Castrol mailing')
+
+@section('css')
     <link rel="stylesheet" href="{{ asset('/css/home.css') }}">
-</head>
+@endsection
 
-<body>
-    <img class="w-100" src="{{ URL::to('/') }}/mailing/fondo-mail.png" alt="">
-    <div class="container">
+@section('content')
+
+    <img class="w-100" src="{{ asset('/mailing/fondo-mail.png') }}" alt="">
+    <div class="content">
         <img class="w-100" src="{{ asset('/mailing/header-mail1.png') }}" alt="">
         <img class="header-logos" src="{{ asset('/mailing/header-logos.png') }}" alt="">
         <div class="principal-text bold-text">
@@ -30,8 +28,8 @@
             </a>
         </div>
     </div>
-    <img class="w-100" src="{{ asset('/mailing/footer-mail1.png') }}" alt="">
+    <footer>
+        <img class="w-100" src="{{ asset('/mailing/footer-mail1.png') }}" alt="">
+    </footer>
 
-</body>
-
-</html>
+@endsection

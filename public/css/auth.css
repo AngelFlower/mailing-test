@@ -1,0 +1,47 @@
+body {
+    margin:0; 
+    padding:0; 
+    height: 100vh;  
+}
+
+.navbar-desktop {
+    display: none;
+}
+
+.form-width {
+    width: 100vh;
+    max-width: 350px;
+}
+
+.v-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer {
+    height: 100px;
+}
+
+.footer-img {
+    max-width: 650px;
+    width: 100%;
+}
+
+.login-img {
+    max-width: 400px;
+}
+
+
+@media only screen and (min-width: 992px) {
+    /* For desktop: */
+    .navbar-desktop {
+        display: block;
+        max-width: 400px;
+    }
+
+    footer {
+        position: fixed;
+        bottom: 0;
+    }
+}
