@@ -6,7 +6,7 @@
 
     <div class="row h-100">
         <div class="col-lg-6 p-5 v-center">
-            <img class="w-100 login-img" src="{{ asset('/svg/login.svg') }}" alt="Imagen de inicio de sesión"/>
+            <img class="w-100 login-img" src="{{ asset('/svg/login.svg') }}" alt="Imagen de inicio de sesión" />
         </div>
         <div class="col-lg-6 p-5 v-center">
             <div>
@@ -15,7 +15,7 @@
                     <form method="POST" action="{{ route('login.custom') }}">
                         @csrf
                         <div class="form-group mb-3">
-                            <input type="text" placeholder="Correo electrónico" id="email" class="form-control"
+                            <input type="email" placeholder="Correo electrónico" id="email" class="form-control"
                                 name="email" required autofocus>
                             @if ($errors->has('email'))
                                 <span class="text-danger">{{ $errors->first('email') }}</span>
@@ -30,6 +30,13 @@
                             @endif
                         </div>
 
+                        @if ($errors->any())
+                            <h4></h4>
+                            <div class="alert alert-danger" role="alert">
+                                {{ $errors->first() }}
+                            </div>
+                        @endif
+
                         <div class="d-grid mx-auto mb-2">
                             <button type="submit" class="btn btn-success btn-block">Iniciar sesión</button>
                         </div>
@@ -38,7 +45,7 @@
                                 registrarme</a>
                         </div>
                         <div class="d-grid mx-auto">
-                            <a href="{{ url('/') }}" class="text-center">Volver atrás</a>
+                            <a href="{{ url()->previous() }}" class="text-center">Volver atrás</a>
                         </div>
                     </form>
 
@@ -46,6 +53,5 @@
             </div>
         </div>
     </div>
-
 
 @endsection
